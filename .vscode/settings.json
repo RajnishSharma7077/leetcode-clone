@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^node - <<'NODE'\nconst java = `class Solution \\{\\\\n  public int\\[\\] twoSum\\(int\\[\\] nums, int target\\) \\{\\\\n    Map<Integer, Integer> seen = new HashMap<>\\(\\);\\\\n    for \\(int i = 0; i < nums\\.length; i\\+\\+\\) \\{\\\\n      int complement = target - nums\\[i\\];\\\\n      if \\(seen\\.containsKey\\(complement\\)\\) \\{\\\\n        return new int\\[\\] \\{ seen\\.get\\(complement\\), i \\};\\\\n      \\}\\\\n      seen\\.put\\(nums\\[i\\], i\\);\\\\n    \\}\\\\n    return new int\\[\\] \\{\\};\\\\n  \\}\\\\n\\}`;\nconst wrapper = `\nimport java\\.util\\.\\*;\n\\$\\{java\\}\npublic class Main \\{\n  public static void main\\(String\\[\\] args\\) \\{\n    int\\[\\] nums = \\{2, 7, 11, 15\\};\n    int target = 9;\n    int\\[\\] result = new Solution\\(\\)\\.twoSum\\(nums, target\\);\n    int\\[\\] expected = \\{0, 1\\};\n\n    if \\(Arrays\\.equals\\(result, expected\\)\\) \\{\n      System\\.out\\.println\\(\"\\{\\\\\\\\\\\\\"verdict\\\\\\\\\\\\\":\\\\\\\\\\\\\"accepted\\\\\\\\\\\\\",\\\\\\\\\\\\\"passed\\\\\\\\\\\\\":1,\\\\\\\\\\\\\"total\\\\\\\\\\\\\":1\\}\"\\);\n      return;\n    \\}\n\n    String payload = \"\\{\\\\\\\\\\\\\"verdict\\\\\\\\\\\\\":\\\\\\\\\\\\\"wrong-answer\\\\\\\\\\\\\",\\\\\\\\\\\\\"actual\\\\\\\\\\\\\":\" \\+ Arrays\\.toString\\(result\\) \\+ \",\\\\\\\\\\\\\"expected\\\\\\\\\\\\\":\" \\+ Arrays\\.toString\\(expected\\) \\+ \",\\\\\\\\\\\\\"passed\\\\\\\\\\\\\":0,\\\\\\\\\\\\\"total\\\\\\\\\\\\\":1\\}\";\n    System\\.out\\.println\\(payload\\);\n  \\}\n\\}\n`;\nconsole\\.log\\(wrapper\\);\nNODE$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
